@@ -25,7 +25,7 @@ SECRET_KEY = 'lz15^9o+hs#o7=3wytf!l-k@8%m3y1(xcepx-%a@861hfydsvb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['calm-reef-44455.herokuapp.com']
 
 
 # Application definition
