@@ -1,0 +1,42 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+{% block b1 %}
+
+<div class="container">
+    <a href="create-student">Create Student</a>
+    <form action="" method="POST" class='mt-4'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Search" class= "btn btn-info">
+    </form>
+</div>
+
+{% if results %}
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope='col'>#</th>
+        <th scope='col'>Student Name</th>
+        <th scope='col'>Department</th>
+        <th scope='col'>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for r in results %}
+        <tr>
+        <th scope="row">{{r.id}}</th>
+        <td>{{r.student_name}}</td>
+        <td>{{r.department}}</td>
+        <td>
+            <a href= "edit-student/{{r.id}}">Edit</a>
+            <a href= "delete-student/{{r.id}}">Delete</a>
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+{% endif %}
+
+
+
+{% endblock %}
+
